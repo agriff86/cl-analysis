@@ -38,6 +38,8 @@ $ clanalysis -st 202111170155 -et 202111180205 -tz 10 ../data/L1_94954_202111170
 
 ![Example plot](./sample_plot.png)
 
+Using the same data, extract timeseries of the cloudbase, planetary boundary-layer height (determined using the gradient method), and the magnitude of the vertical gradient at the top of the PBL.
+
 ```sh
 $ clanalysis -st 202111170155 -et 202111180205 \
         -tz 10 \

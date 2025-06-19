@@ -73,7 +73,7 @@ def load_ceilometer_file(
     r = r[range_slice]
     rcs_910 = nc.variables["rcs_910"][:, range_slice]
     cloudbase = nc.variables["cloud_data"][:, 0]
-    cloudbase[nc.variables["cloud_status"][:, 0] == False] = np.NaN
+    cloudbase[nc.variables["cloud_status"][:, 0] == False] = np.nan
 
     # slice to the time of interest
     if tmax is not None:
@@ -186,7 +186,7 @@ def detect_pbl_gradient_method(
         rcs_gradient[r_tiled >= cloudbase_tiled - pbl_to_cloudbase_min] = 0
     # PBL is the largest gradient left, after exclusions
     idxmax = np.argmax(rcs_gradient, axis=1)
-    pbl = r[idxmax].astype(np.float)
+    pbl = r[idxmax].astype(float)
     rcs_gradient_at_pblh = np.array(
         [itm[idx] for itm, idx in zip(rcs_gradient, idxmax)]
     )
